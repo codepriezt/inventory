@@ -47,3 +47,10 @@
     </div>
 </div>
 @endsection
+
+@section('script-content')
+<script>
+
+ 
+
+@endsection

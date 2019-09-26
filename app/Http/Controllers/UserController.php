@@ -20,7 +20,11 @@ class UserController extends Controller
 
             $user = User::createUser($request);
 
-            return response()->json($user);
+            if(!user){
+                return back()->with('error' , 'unable to process this at the moment');
+            }
+
+            return redirect()->route('signup.index')->with('success' , 'Userc successfully crested');
 
            
     }

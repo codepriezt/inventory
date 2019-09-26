@@ -11,14 +11,13 @@
 |
 */
 
-use App\Http\Middleware\user;
-use App\Http\Middleware\AdminUser;
+
 
 
 
 
     //product
-    Route::group(['prefix' => '' , 'middleware' => ['user'] ], function (){
+    Route::group(['prefix' => '' ], function (){
     Route::get('/createproduct' , 'Main\PageController@addProduct')->name('createproduct.index');
     Route::post('/addproduct' , 'ProductController@createProduct')->name('addproduct');
     Route::get('/products' , 'Main\PageController@product')->name('product.index');
@@ -44,7 +43,7 @@ use App\Http\Middleware\AdminUser;
 
 
  
- Route::group(['prefix' => 'admin' ,' middleware' => ['admin']], function (){
+ Route::group(['prefix' => 'admin'], function (){
  Route::get('/createproduct' , 'Admin\PageController@addProduct')->name('createproduct.index');
  Route::post('/addproduct' , 'ProductController@createProduct')->name('addproduct');
  Route::get('/products' , 'Admin\PageController@product')->name('product.index');
